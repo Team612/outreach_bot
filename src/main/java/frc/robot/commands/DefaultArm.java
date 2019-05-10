@@ -9,15 +9,16 @@ package frc.robot.commands;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
+
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
 
-public class MoveTheArm extends Command {
+public class DefaultArm extends Command {
   int taret, ARM_UP_SPEED = 1500, ARM_DOWN_SPEED = 1500;
   boolean is_pid_enabled_question_mark = true, up_limit_switch, down_limit_switch;
-  public MoveTheArm() {
+  public DefaultArm() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.onearmboi); 

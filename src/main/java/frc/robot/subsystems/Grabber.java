@@ -9,12 +9,11 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.ToGrabOrNotToGrab;
-
+import frc.robot.commands.DefaultGrabber;
 /**
  * Add your docs here.
  */
-public class GrabbyThing extends Subsystem {
+public class Grabber extends Subsystem {
   DoubleSolenoid onegrabbyboi = new DoubleSolenoid(1, 0, 1); // NUMBERS NEED ADJUSTING, ADJUST AT RICHARD'S BEHEST
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -23,7 +22,7 @@ public class GrabbyThing extends Subsystem {
   }
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new ToGrabOrNotToGrab());
+    setDefaultCommand(new DefaultGrabber());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

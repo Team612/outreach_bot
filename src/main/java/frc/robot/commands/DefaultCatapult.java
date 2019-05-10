@@ -16,8 +16,8 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class Catapult extends Command {
-  public Catapult() {
+public class DefaultCatapult extends Command {
+  public DefaultCatapult() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.onecatapultyboi);
   }

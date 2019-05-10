@@ -23,11 +23,12 @@ import frc.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static CatapultDriver onecatapultyboi = new CatapultDriver();
+  public static Catapult onecatapultyboi = new Catapult();
   public static OI m_oi;
-  public static GrabbyThing onegrabbyboi = new GrabbyThing();
-  public static ArmThing onearmboi = new ArmThing();
+  public static Grabber onegrabbyboi = new Grabber();
+  public static ArmForGrabber onearmboi = new ArmForGrabber();
   Command m_autonomousCommand;
+  public static DriveTrain onedriveyboi = new DriveTrain();
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**

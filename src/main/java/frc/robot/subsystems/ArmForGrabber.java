@@ -10,20 +10,20 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import frc.robot.commands.MoveTheArm;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.DefaultArm;
 
 /**
  * Add your docs here.
  */
-public class ArmThing extends Subsystem {
+public class ArmForGrabber extends Subsystem {
   double kF = 0;
   double kP = 0.001; // SUBJECT TO CHANGE
   double kI = 0;
   double kD = 0;
   private static WPI_TalonSRX armboi = new WPI_TalonSRX(00000); // 00000 is temporary
 
-  public static WPI_TalonSRX get_fricking_talon(){
+  public WPI_TalonSRX get_fricking_talon(){
     return armboi;
   }
 
@@ -48,6 +48,5 @@ public class ArmThing extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
     configArm();
-    setDefaultCommand(new MoveTheArm());
   }
 }

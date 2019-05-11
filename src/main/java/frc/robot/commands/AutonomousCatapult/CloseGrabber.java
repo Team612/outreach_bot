@@ -5,14 +5,19 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.AutonomousCatapult;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.OI;
+import frc.robot.Robot;
 
-public class Ultrasonics extends Command {
-  public Ultrasonics() {
+public class CloseGrabber extends Command {
+  boolean is_finished = false;
+  public CloseGrabber() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.onegrabbyboi);
   }
 
   // Called just before this Command runs the first time
@@ -23,12 +28,16 @@ public class Ultrasonics extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if(OI.gunner.getAButton()){
+      Robot.onegrabbyboi.getSolenoid().set(Value.kReverse);
+      is_finished = true;
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return is_finished;
   }
 
   // Called once after isFinished returns true

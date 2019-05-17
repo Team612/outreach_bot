@@ -23,13 +23,13 @@ import frc.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static Catapult onecatapultyboi = new Catapult();
-  public static OI m_oi;
-  public static Grabber onegrabbyboi = new Grabber();
-  public static ArmForGrabber onearmboi = new ArmForGrabber();
-  Command m_autonomousCommand;
-  public static DriveTrain onedriveyboi = new DriveTrain();
+  public static Catapult catapult = new Catapult();
+  public static Arm arm = new Arm();
+  public static DriveTrain drivetrain = new DriveTrain();
   SendableChooser<Command> m_chooser = new SendableChooser<>();
+  Command m_autonomousCommand;
+  public static OI m_oi;
+
 
   /**
    * This function is run when the robot is first started up and should be

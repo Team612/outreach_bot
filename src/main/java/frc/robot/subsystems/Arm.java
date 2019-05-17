@@ -7,12 +7,18 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
-public class UltrasonicsForSafetyPurposes extends Subsystem {
+public class Arm extends Subsystem {
+  DoubleSolenoid solenoid_G = new DoubleSolenoid(RobotMap.solenoid_A,RobotMap.solenoid_A_one,RobotMap.solenoid_A_two);
+  public  WPI_TalonSRX talon_Arm = new WPI_TalonSRX(RobotMap.talon_arm);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
@@ -20,5 +26,8 @@ public class UltrasonicsForSafetyPurposes extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+  public DoubleSolenoid getSolenoid() {
+    return solenoid_G;
   }
 }

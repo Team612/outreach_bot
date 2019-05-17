@@ -22,13 +22,11 @@ import frc.robot.commands.DefaultDrive;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public static WPI_TalonSRX tankWheel_left = new WPI_TalonSRX(RobotMap.reee_1);
-  public static WPI_TalonSRX tankWheel_right = new WPI_TalonSRX(RobotMap.reee_2);
-  public static WPI_TalonSRX omni_left = new WPI_TalonSRX(RobotMap.omniwheel_left);
-  public static WPI_TalonSRX omniwheel_right = new WPI_TalonSRX(RobotMap.omniwheel_right);
-  public static SpeedControllerGroup twl = new SpeedControllerGroup(tankWheel_left, omni_left);
-  public static SpeedControllerGroup twr = new SpeedControllerGroup(tankWheel_right, omniwheel_right);
-  public static DifferentialDrive real_twl = new DifferentialDrive(twl, twr);
+  public  WPI_TalonSRX Talon_FR = new WPI_TalonSRX(RobotMap.Talon_FR);
+  public  WPI_TalonSRX Talon_FL = new WPI_TalonSRX(RobotMap.Talon_FL);
+  public  WPI_TalonSRX Talon_RR = new WPI_TalonSRX(RobotMap.Talon_RR);
+  public  WPI_TalonSRX Talon_RL = new WPI_TalonSRX(RobotMap.Talon_RL);
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

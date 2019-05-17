@@ -14,25 +14,36 @@ import frc.robot.OI;
 import frc.robot.Robot;
 
 public class DefaultDrive extends Command {
+  int left_servo_value = 72, right_servo_value = 114;
   public DefaultDrive() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.onedriveyboi);
+    requires(Robot.drivetrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(Math.abs(OI.driver.getY(Hand.kLeft)) < 0.1){
-      Robot.onedriveyboi.real_twl.tankDrive(0, 0);
+
+    if (Math.abs(OI.driver.getY(Hand.kLeft)) < .1){
+      Robot.drivetrain.Talon_RL.set(0);
+      Robot.drivetrain.Talon_FL.set(0);
     } else {
-      Robot.onedriveyboi.real_twl.tankDrive(OI.driver.getY(Hand.kLeft), OI.driver.getY(Hand.kRight), false);
-      // In theory, this should work
+    Robot.drivetrain.Talon_FL.set(OI.driver.getY(Hand.kLeft));
+    Robot.drivetrain.Talon_RL.set(OI.driver.getY(Hand.kLeft));
+    }
+     if (Math.abs(OI.driver.getY(Hand.kRight)) < .1){ 
+    Robot.drivetrain.Talon_FR.set(0);
+    Robot.drivetrain.Talon_RR.set(0);
+    } else{
+    Robot.drivetrain.Talon_FR.set(OI.driver.getY(Hand.kRight));
+    Robot.drivetrain.Talon_FL.set(OI.driver.getY(Hand.kRight));
     }
   }
 

@@ -29,7 +29,12 @@ public class DefaultArm extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    if(OI.gunner_button_B.get()){
+      Robot.arm.talon_Arm.set(0.5);
+    }
+    else{
+      Robot.arm.talon_Arm.set(0);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

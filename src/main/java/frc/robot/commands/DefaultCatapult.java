@@ -8,13 +8,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
 
-public class DefaultGrabber extends Command {
-  public DefaultGrabber() {
+public class DefaultCatapult extends Command {
+  public DefaultCatapult() {
+    requires(Robot.catapult);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -27,7 +27,13 @@ public class DefaultGrabber extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    if(OI.gunner_button_A.get()){
+      Robot.catapult.getSolenoid().set(Value.kForward);	
+
+    }
+    else{
+      Robot.catapult.getSolenoid().set(Value.kReverse);	
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

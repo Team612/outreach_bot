@@ -8,7 +8,7 @@ import frc.robot.commands.DefaultCatapult;
 
 public class Catapult extends Subsystem {
   
-  DoubleSolenoid solenoid_C = new DoubleSolenoid(RobotMap.solenoid_C,RobotMap.solenoid_C_one,RobotMap.solenoid_C_two);
+  private DoubleSolenoid solenoid_C = new DoubleSolenoid(RobotMap.solenoid_C,RobotMap.solenoid_C_one,RobotMap.solenoid_C_two);
 
   @Override
   public void initDefaultCommand() {

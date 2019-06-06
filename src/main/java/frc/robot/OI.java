@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 
   public static XboxController driver                = new XboxController(RobotMap.DRIVER_PORT);
-  public static XboxController gunner                = new XboxController(RobotMap.GUNNER_PORT);
+ // public static XboxController gunner                = new XboxController(RobotMap.GUNNER_PORT);
   // Driver buttons
   public static JoystickButton driver_button_A    	= new JoystickButton(driver,1);
   public static JoystickButton driver_button_B 		= new JoystickButton(driver,2);
@@ -32,7 +32,7 @@ public class OI {
   public static JoystickButton driver_button_RJ   	= new JoystickButton(driver,10);
 
   // Gunner buttons
-  public static JoystickButton gunner_button_A    	= new JoystickButton(gunner,1);
+  /*public static JoystickButton gunner_button_A    	= new JoystickButton(gunner,1);
   public static JoystickButton gunner_button_B    	= new JoystickButton(gunner,2);
   public static JoystickButton gunner_button_X    	= new JoystickButton(gunner,3);
   public static JoystickButton gunner_button_Y    	= new JoystickButton(gunner,4);
@@ -41,5 +41,5 @@ public class OI {
   public static JoystickButton gunner_button_BCK  	= new JoystickButton(gunner,7);
   public static JoystickButton gunner_button_STRT 	= new JoystickButton(gunner,8);
   public static JoystickButton gunner_button_LJ   	= new JoystickButton(gunner,9);
-  public static JoystickButton gunner_button_RJ   	= new JoystickButton(gunner,10);
+  public static JoystickButton gunner_button_RJ   	= new JoystickButton(gunner,10);*/
 }

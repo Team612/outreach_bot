@@ -10,7 +10,7 @@ import frc.robot.subsystems.*;
 
 
 public class Robot extends TimedRobot {
-
+  public static POVConvert driver_pov = new POVConvert(OI.driver);
   public static Catapult catapult = new Catapult();
   public static Arm arm = new Arm();
   public static DriveTrain drivetrain = new DriveTrain();

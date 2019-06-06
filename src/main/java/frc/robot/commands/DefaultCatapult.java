@@ -18,11 +18,15 @@ public class DefaultCatapult extends Command {
 
   @Override
   protected void execute() {
-    if (OI.gunner_button_A.get()) {
+    if (OI.driver_button_A.get()) {
       Robot.catapult.getSolenoid().set(Value.kForward);	
-    } else {
+    } else{
       Robot.catapult.getSolenoid().set(Value.kReverse);	
-    }
+    } //else{
+      //Robot.catapult.getSolenoid().set(Value.kOff);	
+      //if(Robot.catapult.getSolenoid().get() == Value.kForward
+    //}
+
   }
 
   @Override
